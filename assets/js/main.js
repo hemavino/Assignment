@@ -2,6 +2,14 @@
     "use strict";
 
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
         const testimonials = document.querySelectorAll('.testimonial-item');
         const prevBtn = document.querySelector('.vector-icon:first-child');
         const nextBtn = document.querySelector('.vector-icon:last-child');
